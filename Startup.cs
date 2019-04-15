@@ -8,6 +8,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+
+// Local Import
+using GuessingGame.Models;
 
 namespace GuessingGame
 {
@@ -30,6 +34,9 @@ namespace GuessingGame
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddDbContext<GuessingGameContext>(options => {
+                options.UseSqlite(Configuration.GetConnectionString("ScoreContext"));
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
