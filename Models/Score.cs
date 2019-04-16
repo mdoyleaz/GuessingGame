@@ -1,6 +1,5 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-
 namespace GuessingGame.Models 
 {
     public class Score 
@@ -10,6 +9,6 @@ namespace GuessingGame.Models
         public int AnswerScore { get; set; }
         
         [DataType(DataType.Date)]
-        public DateTime ScoreLog { get; set;}
+        public DateTime ScoreLog { get; set;} = DateTime.Today;
     }
 }

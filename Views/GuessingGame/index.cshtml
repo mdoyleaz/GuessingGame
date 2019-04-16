@@ -1,6 +1,19 @@
 @{
     ViewData["Title"] = "Guessing Game";
 }
+<div class="jumbotron">
+    <div class="container h-100">
+        <div class="row align-items-center h-100">
+            <div class="col-4 mx-auto">
+                <h2>Guess the number!</h2>
+                <p>Lets Start by Getting Your name.</p>
 
-<h2>Guess the number!</h2>
-<p>What is the number I am thinking of?</p>
+                @using(Html.BeginForm("Index"))
+                {
+                    <input type="text" name="Name" />
+                    <button class="btn btn-success btn-sm" type="submit">Lets Play!</button>
+                }           
+            </div>
+        </div>
+    </div>
+</div>
